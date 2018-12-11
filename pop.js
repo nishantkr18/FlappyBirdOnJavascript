@@ -1,4 +1,3 @@
-let gen=1;
 function popu()
 {
 	this.allDead=false;
@@ -101,8 +100,7 @@ function popu()
 			}
 
 
-		// for(let i=0; i<popL; i++)
-		// 	print(this.oldPop[i].fitness);
+		
 
 
 		this.fitnessSum=0;
@@ -146,7 +144,6 @@ function popu()
 		this.runningFittest.resetBird();
 		this.allDead=false;
 		this.bestRunSoFar.dead=true;
-		print("next generation");
 	}
 
 	this.show=function()
@@ -157,9 +154,8 @@ function popu()
 		
 		this.runningFittest.show(20,200,20);
 		this.fittest.show(200,20,20);
-		this.fittest.nn.showNN(700,50,200,20,20,this.fittest.w1,this.fittest.w2);
-		this.runningFittest.nn.showNN(700,250,20,200,20,this.runningFittest.w1,this.runningFittest.w2);
-		print(highestScore)
+		this.fittest.nn.showNN(625,25,200,20,20,this.fittest.w1,this.fittest.w2);
+		this.runningFittest.nn.showNN(625,225,20,200,20,this.runningFittest.w1,this.runningFittest.w2);
 	}
 
 }

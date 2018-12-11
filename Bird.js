@@ -7,6 +7,8 @@ function Bird()
   this.w2=new Matrix(1,_hn+1);
   this.w1.randomMatrix();
   this.w2.randomMatrix();
+  this.yourHighest=0;
+  this.yourTries=1;
   
   this.radius=30;
   this.x=50;
@@ -22,13 +24,14 @@ function Bird()
       p2=new pipes();
     }
     p2.update();
+    Score=this.fitness;
     let pipeNo;
     if(this.x>p2.P[0].x+p2.P[0].girth/2)
       pipeNo=1;
     else
       pipeNo=0;
 
-    let yLocation=p.P[pipeNo].y;
+    let yLocation=p2.P[pipeNo].y;
     this.inputs=[(this.vel+upVel)/(upVel+sqrt(2*gravity*height)),this.y/height,p2.P[pipeNo].x/width,p2.P[pipeNo].top[1]/height,p2.P[pipeNo].bottom[1]/height];
     //let inputs=[1,2,3,4];
     let result=this.nn.predict(this.inputs,this.w1,this.w2);
@@ -39,7 +42,8 @@ function Bird()
 
     // 5print(result)
     if(this.dead==false){
-      if(this.y>=height||this.y<=0||this.hitByP2()==true)
+      this.fitness++;
+      if(this.y>=height||this.y<=0||this.hit(p2)==true)
           {this.dead=true;}
     }
 
@@ -105,7 +109,7 @@ function Bird()
 
     // 5print(result)
     if(this.dead==false){
-      if(this.y>=height||this.y<=0||this.hit()==true)
+      if(this.y>=height||this.y<=0||this.hit(p)==true)
           {this.dead=true;this.calFinalFitness(yLocation);}
     }
 
@@ -121,22 +125,11 @@ function Bird()
       this.vel=-upVel;
   }
 
-  this.hit=function()
+  this.hit=function(p)
   {
     if(p.P[0].top[0]<this.x&&p.P[0].top[2]>this.x)
     {
       if(this.y<p.P[0].top[1]||this.y>p.P[0].bottom[1])
-        return true;
-
-    }
-    return false;
-  }
-
-  this.hitByP2=function()
-  {
-    if(p2.P[0].top[0]<this.x&&p2.P[0].top[2]>this.x)
-    {
-      if(this.y<p2.P[0].top[1]||this.y>p2.P[0].bottom[1])
         return true;
 
     }

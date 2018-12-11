@@ -56,7 +56,7 @@ function MyNN(iNode,hn,on)
       for(let j=0; j<this.on; j++)
       {let color=[];
         if(w2.m[j][i]<=0)color=[255,0];else color=[0,255];
-        ln(startOfNNx+gapBetLayers,startOfNNy+i*horizontalGap,startOfNNx+gapBetLayers*2,startOfNNy+floor(this.hn/2)*horizontalGap,color[0],color[1],0,map(abs(w2.m[j][i]),0,1,0,255));
+        ln(startOfNNx+gapBetLayers,startOfNNy+i*horizontalGap,startOfNNx+gapBetLayers*1.5,startOfNNy+floor(this.hn/2)*horizontalGap,color[0],color[1],0,map(abs(w2.m[j][i]),0,1,0,255));
       }
     }
 
@@ -84,7 +84,7 @@ function MyNN(iNode,hn,on)
       fill(0,0,255);
     else
       fill(R,G,B,Color);
-    ellipse(startOfNNx+gapBetLayers*2,startOfNNy+floor(this.hn/2)*horizontalGap,20);
+    ellipse(startOfNNx+gapBetLayers*1.5,startOfNNy+floor(this.hn/2)*horizontalGap,20);
   }
 
   
