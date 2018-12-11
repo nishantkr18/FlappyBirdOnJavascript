@@ -1,4 +1,5 @@
 # FlappyBirdOnJavascript
+Scroll Down to find the start training button!!
 Improved flappy bird learns through neuroevolution.
 To start, open index.html on any browser. Use the slider for making the training fast.I used P5.js library here for JavaScript. On the right hand side is the neural Network of the fittestBirdOfPreviousGame on top and fittestBirdinCurrentGame at bottom.
 Except for the p5.min.js and p5.dom.js, the entire project is self made.
