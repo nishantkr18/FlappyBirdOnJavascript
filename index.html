@@ -19,6 +19,7 @@ theme: jekyll-theme-slate
   <script language="javascript" type="text/javascript" src="population.js"></script>
   <script language="javascript" type="text/javascript" src="pipe.js"></script>
   <h2>NeuroEvolution of Flappy Bird</h2>
+  <p>Here, a population (an evolving collection of potential solutions that are explored in parallel) is subjected to a heuristic survival-of-the-fittest competition. Individuals that score higher on the fitness function (the objective function guiding search) are granted more offspring in the next generation (slightly perturbed copies of themselves or combinations of themselves with other individuals). In contrast, individuals that score poorly are removed from the population.</p>
   <p>With the help of p5.js library, I created the following model.</p>
   <p>A neural network is used to provide the outputs. Inputs to the network are vertical velocity of Bird, horizontal distance of bird from nearest pipe, x position of the nearest pipe and the two y positions of the nearest pipe.The neural network thus contains an input layer containing 5 nodes, 1 hidden layer containing 5 nodes and obviously 1 output- whether to jump or not.
   (The biases are also present but are not shown in the Graphical Representation.)</p>
