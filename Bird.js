@@ -10,7 +10,7 @@ function Bird()
   this.yourHighest=0;
   this.yourTries=1;
   
-  this.radius=30;
+  this.radius=diameter;
   this.x=50;
   this.y=height/2;
   this.vel=0;
@@ -129,7 +129,7 @@ function Bird()
   {
     if(p.P[0].top[0]<this.x&&p.P[0].top[2]>this.x)
     {
-      if(this.y<p.P[0].top[1]||this.y>p.P[0].bottom[1])
+      if(this.y-this.radius/2<p.P[0].top[1]||this.y+this.radius/2>p.P[0].bottom[1])
         return true;
 
     }

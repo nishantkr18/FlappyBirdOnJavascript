@@ -6,6 +6,7 @@ let pipeGap=120;
 let pipeGirth=50;
 let speed=3;
 let gapBetPipes=250;
+let diameter=30;
 
 let gen=1;
 let Score=0;
@@ -19,7 +20,7 @@ function setup()
 {
 	print("you can ask for or change:");
 	print("popL, mutateRate, gravity, upVel");
-	print("pipeGap, pipeGirth, speed, gapBetPipes");
+	print("pipeGap, pipeGirth, speed, gapBetPipes and radius");
 	HTMLelements={
 		canvas:createCanvas(800,400),
 		resetGame:createButton('Reset Game'),
@@ -105,6 +106,11 @@ function draw()
 		HTMLelements.H3.html('Generation: '+gen);
 		test.bestRunSoFar.show(2,20,200);
 		test.bestRunSoFar.nn.showNN(625,50,200,200,20,test.bestRunSoFar.w1,test.bestRunSoFar.w2);
+		if(test.bestRunSoFar.dead==true)
+		{
+			slep(1000);
+			
+		}
 	}
 	if(dummy3==true)
 	{
@@ -116,6 +122,7 @@ function draw()
 		yourBird.show(200,20,200);
 		if(yourBird.dead==true)
 		{
+			slep(1000);
 			yourBird.yourTries++;
 			yourBird.resetBird();
      		p3=new pipes();
@@ -141,6 +148,11 @@ function draw()
 	}
 	
 }
+
+function slep(miliS)
+			{let startingTime=new Date().getTime();
+				while(true){if(new Date().getTime()-startingTime>=miliS)break;}
+			}
 // function keyPressed()
 // {
 // 	if(key>='0'&&key<='9'){
