@@ -12,18 +12,18 @@ let gen=1;
 let Score=0;
 let highestScore=0;
 let p,p2,p3;let test;
-let dummy=false,dummy2=false,dummy3=false;
+let dummy,dummy2,dummy3;
 let HTMLelements;
 let yourBird;
 
 let bird_UP, bird_DOWN, bg, Pipe_UP, Pipe_DOWN;
 function preload()
 {
-	bg = loadImage('bg.jpeg')
-	bird_UP = loadImage('bird_UP.png');
-	bird_DOWN = loadImage('bird_DOWN.png');
-	Pipe_UP = loadImage('Pipe_UP.jpeg');
-	Pipe_DOWN = loadImage('Pipe_DOWN.jpeg');
+	bg = loadImage('img/bg.jpeg')
+	bird_UP = loadImage('img/bird_UP.png');
+	bird_DOWN = loadImage('img/bird_DOWN.png');
+	Pipe_UP = loadImage('img/Pipe_UP.jpeg');
+	Pipe_DOWN = loadImage('img/Pipe_DOWN.jpeg');
 }
 
 function setup()
@@ -67,12 +67,12 @@ function resetGame()
 	p3=new pipes();
 	yourBird=new Bird();
 	test=new popu();
-	dummy=false,dummy2=false,dummy3=false; 
+	dummy=true,dummy2=false,dummy3=false; 
 
 	HTMLelements.H1.html("Highest Score: "+highestScore);
 	HTMLelements.H2.html('Score: '+Score);
 	HTMLelements.H3.html('Generation: '+gen);
-	HTMLelements.button.html('Start Training');
+	HTMLelements.button.html('Run best so far');
 	HTMLelements.pauseButton.html('Stop All');
 	HTMLelements.letMePlayButton.html('Let ME Play');
 	HTMLelements.SuperHumanLevel.html('SuperHuman Level');	
