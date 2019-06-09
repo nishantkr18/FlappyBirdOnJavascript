@@ -7,4 +7,5 @@ the Selection of parents is based such the in the new generation only those memb
 Mutation rate is set to 0.01.
 Fitness is designed such that the score as well as the distance between the nearest pipe and the bird is also taken into account.
 
+## To see it work on your browser, go to:
 https://nishantkr18.github.io/FlappyBirdOnJavascript/
