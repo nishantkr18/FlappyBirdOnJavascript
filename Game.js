@@ -16,10 +16,10 @@ let dummy=false,dummy2=false,dummy3=false;
 let HTMLelements;
 let yourBird;
 
-let flower;
+let android;
 function preload()
 {
-	flower = loadImage('android.png');
+	android = loadImage('android.png');
 }
 
 
