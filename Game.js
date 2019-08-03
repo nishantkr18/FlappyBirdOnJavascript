@@ -16,6 +16,13 @@ let dummy=false,dummy2=false,dummy3=false;
 let HTMLelements;
 let yourBird;
 
+let flower;
+function preload()
+{
+	flower = loadImage('android.png');
+}
+
+
 function setup()
 {
 	print("you can ask for or change:");
