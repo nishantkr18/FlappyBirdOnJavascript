@@ -11,10 +11,12 @@ function pipe()
 
 	this.show=function()
 	{
-		
-		fill(10,255,10);
-		rect(this.x-this.girth/2,0,this.girth,this.y-this.gap/2);
-		rect(this.x-this.girth/2,this.y+this.gap/2,this.girth,height-this.y-this.gap/2);
+		fill(10,255,255);
+		// rect(this.x-this.girth/2,0,this.girth,this.y-this.gap/2);
+		// rect(this.x-this.girth/2,this.y+this.gap/2,this.girth,height-this.y-this.gap/2);
+		image(Pipe_UP, this.x-this.girth/2,0,this.girth,this.y-this.gap/2);
+		image(Pipe_DOWN, this.x-this.girth/2,this.y+this.gap/2,this.girth,height-this.y-this.gap/2)
+
 	}
 
 

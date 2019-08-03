@@ -79,8 +79,12 @@ function Bird()
   this.show=function(R,G,B)
   {
     if(this.dead==false){
-//     fill(R,G,B,100);
-    image(android,this.x,this.y,this.radius, this.radius);}
+    //    fill(R,G,B,100);
+    // ellipse(this.x,this.y,this.radius);
+    if(this.vel>0) image(bird_UP, this.x-this.radius/2, this.y-this.radius/2, this.radius*1.5, this.radius*1.5);
+    else image(bird_DOWN, this.x-this.radius/2, this.y-this.radius/2, this.radius*1.5, this.radius*1.5);
+
+    }
   }
   this.calScore=function()
   {

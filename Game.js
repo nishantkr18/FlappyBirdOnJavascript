@@ -16,18 +16,21 @@ let dummy=false,dummy2=false,dummy3=false;
 let HTMLelements;
 let yourBird;
 
-let android;
+let bird_UP, bird_DOWN, bg, Pipe_UP, Pipe_DOWN;
 function preload()
 {
-	android = loadImage('android.png');
+	bg = loadImage('bg.jpeg')
+	bird_UP = loadImage('bird_UP.png');
+	bird_DOWN = loadImage('bird_DOWN.png');
+	Pipe_UP = loadImage('Pipe_UP.jpeg');
+	Pipe_DOWN = loadImage('Pipe_DOWN.jpeg');
 }
-
 
 function setup()
 {
 	print("you can ask for or change:");
 	print("popL, mutateRate, gravity, upVel");
-	print("pipeGap, pipeGirth, speed, gapBetPipes and radius");
+	print("pipeGap, pipeGirth, speed, gapBetPipes and diameter");
 	HTMLelements={
 		canvas:createCanvas(800,400),
 		resetGame:createButton('Reset Game'),
@@ -95,7 +98,7 @@ function draw()
 		for(let i=0; i<HTMLelements.slider.value(); i++){
 		test.update();
 		}
-		background(20,200,200);
+		background(bg);
 		test.show();
 		HTMLelements.H1.html("Highest Score: "+highestScore);
 		HTMLelements.H2.html('Score: '+Score);
@@ -106,7 +109,7 @@ function draw()
 		for(let i=0; i<HTMLelements.slider.value(); i++){
 		test.bestRunSoFar.updateIndividual();
 		}
-		background(200,20,200);
+		background(bg);
 		p2.show();
 		HTMLelements.H1.html("Score: "+Score);
 		HTMLelements.H2.html("THIS IS THE BEST RUN SO FAR");
@@ -121,7 +124,7 @@ function draw()
 	}
 	if(dummy3==true)
 	{
-		background(200,200,20);
+		background(bg);
 		p3.show();
 		HTMLelements.H1.html("Your Highest Score: "+yourBird.yourHighest);
 		HTMLelements.H2.html("Your Present Score: "+Score);
