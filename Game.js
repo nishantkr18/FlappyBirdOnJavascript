@@ -25,6 +25,7 @@ function preload()
 
 function setup()
 {
+	image(flower, 45, 45, 45, 45);
 	print("you can ask for or change:");
 	print("popL, mutateRate, gravity, upVel");
 	print("pipeGap, pipeGirth, speed, gapBetPipes and radius");
