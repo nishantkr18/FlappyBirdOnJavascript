@@ -40,6 +40,7 @@ function setup()
 		button:createButton(),
 		pauseButton:createButton(),
 		letMePlayButton:createButton(),
+		SuperHumanLevel:createButton(),
 		sliderVal:createElement('h4','Speed of Training: '),
 		slider:createSlider(1,50,1)
 	};
@@ -48,6 +49,7 @@ function setup()
 
 	HTMLelements.resetGame.mousePressed(resetGame);
 	HTMLelements.letMePlayButton.mousePressed(()=> {dummy=false; dummy2=false; dummy3=true});
+	HTMLelements.SuperHumanLevel.mousePressed(()=> {speed = 15; gravity = 5; resetGame();});
 	HTMLelements.pauseButton.mousePressed(()=> {dummy=false; dummy2=false; dummy3=false});
 	HTMLelements.button.mousePressed(toggleButton);
 	HTMLelements.slider.input(()=> HTMLelements.sliderVal.html('Speed of Training: '+HTMLelements.slider.value()));
@@ -72,7 +74,8 @@ function resetGame()
 	HTMLelements.H3.html('Generation: '+gen);
 	HTMLelements.button.html('Start Training');
 	HTMLelements.pauseButton.html('Stop All');
-	HTMLelements.letMePlayButton.html('Let ME Play');	
+	HTMLelements.letMePlayButton.html('Let ME Play');
+	HTMLelements.SuperHumanLevel.html('SuperHuman Level');	
 }
 
 function toggleButton()
